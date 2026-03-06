@@ -1,0 +1,99 @@
+<div class="evidence-page">
+  <div class="toolbar">
+    <button class="toolbar-btn small" (click)="zoomOut()">−</button>
+    <button class="toolbar-btn small" (click)="zoomIn()">+</button>
+    <button class="toolbar-btn" (click)="resetView()">Reset View</button>
+
+    <label class="upload-btn">
+      Choose File
+      <input
+        type="file"
+        accept=".jpg,.jpeg,.png,.json,.zip"
+        (change)="onFileSelected($event)"
+        hidden
+      />
+    </label>
+
+    <span class="status">{{ fileName }}</span>
+  </div>
+
+  @if (errorMessage) {
+    <div class="error-box">
+      {{ errorMessage }}
+    </div>
+  }
+
+  <div class="content-grid">
+    <div
+      class="viewer"
+      [class.drag-active]="dragActive"
+      (drop)="onDrop($event)"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+    >
+      @if (!imageUrl) {
+        <div class="drop-zone">
+          <div>Drag & Drop evidence file here</div>
+          <div class="sub">Supported: JPG, JSON, or ZIP</div>
+        </div>
+      }
+
+      @if (imageUrl) {
+        <img
+          [src]="imageUrl"
+          alt="Evidence Preview"
+          class="evidence-image"
+          [style.transform]="'scale(' + zoom + ')'"
+        />
+      }
+    </div>
+
+    <div class="details-card">
+      <div class="details-title">Evidence Details</div>
+
+      @if (metadata) {
+        <div class="detail-row">
+          <span class="label">Agency</span>
+          <span class="value">{{ metadata.agency || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Collected By</span>
+          <span class="value">{{ metadata.collectedBy || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Item #</span>
+          <span class="value">{{ metadata.itemNumber || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Case #</span>
+          <span class="value">{{ metadata.caseNumber || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Date</span>
+          <span class="value">{{ metadata.date || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Time</span>
+          <span class="value">{{ metadata.time || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Description</span>
+          <span class="value">{{ metadata.description || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Location</span>
+          <span class="value">{{ metadata.location || '-' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Remarks</span>
+          <span class="value">{{ metadata.remarks || '-' }}</span>
+        </div>
+      } @else {
+        <div class="empty-details">
+          Upload an evidence ZIP with <strong>evidence.jpg</strong> and
+          <strong>evidence.json</strong> to preview both image and details.
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+.hero-card {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+
+  /* BLUE gradient matching the rest of your page */
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(59, 130, 246, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 40% 30%,
+      rgba(37, 99, 235, 0.25),
+      transparent 65%
+    ),
+    linear-gradient(90deg, #022a4d 0%, #033a66 45%, #011428 100%);
+
+  color: white;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.hero-inner {
+  padding: 60px 50px;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+/* GRADIENT TEXT */
+.hero-title span {
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* SUBTEXT */
+.hero-subtitle {
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.feature-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  color: white;
+  margin-top: 15px;
+}
+
+.feature-span {
+  color: #60a5fa;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.logo-section {
+  padding: 80px 40px;
+  position: relative;
+}
+
+/* TEXT */
+.logo-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.logo-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.logo-btn {
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+/* IMAGE SIDE */
+.image-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.feature-image {
+  width: 420px;
+  border-radius: 14px;
+  opacity: 0.95;
+}
+
+/* FADE EFFECT */
+.image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    #032f56 0%,
+    rgba(3, 47, 86, 0.6) 40%,
+    rgba(3, 47, 86, 0) 70%
+  );
+}

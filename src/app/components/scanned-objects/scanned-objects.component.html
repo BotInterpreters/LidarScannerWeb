@@ -1,0 +1,83 @@
+<div class="row g-3 align-items-stretch">
+
+  <div class="col-lg-4">
+    <mat-card appearance="outlined" class="step-card">
+      <div class="step-content">
+
+        <div class="step-head">
+          <span class="step-icon">
+            <mat-icon>3d_rotation</mat-icon>
+          </span>
+
+          <div class="step-text">
+            <div class="step-title">3D Scanning</div>
+            <div class="step-subtitle">
+              Use LiDAR scanning to generate accurate 3D models of the crime scene, enabling investigators to
+              capture spatial details, document evidence positions, and analyze the scene more effectively.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-footer">
+          <button mat-raised-button color="primary" (click)="openDialog()">Preview 3d Image</button>
+        </div>
+
+      </div>
+    </mat-card>
+  </div>
+
+
+  <div class="col-lg-4">
+    <mat-card appearance="outlined" class="step-card">
+      <div class="step-content">
+
+        <div class="step-head">
+          <span class="step-icon">
+            <mat-icon>straighten</mat-icon>
+          </span>
+
+          <div class="step-text">
+            <div class="step-title">Measurement</div>
+            <div class="step-subtitle">
+              Measure distances and dimensions within the 3D scene to capture accurate spatial relationships
+              between evidence and objects.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-footer">
+          <button mat-raised-button color="primary" (click)="openDialogMeasurement()">Preview Measurement</button>
+        </div>
+
+      </div>
+    </mat-card>
+  </div>
+
+
+  <div class="col-lg-4">
+    <mat-card appearance="outlined" class="step-card">
+      <div class="step-content">
+
+        <div class="step-head">
+          <span class="step-icon">
+            <mat-icon>photo_library</mat-icon>
+          </span>
+
+          <div class="step-text">
+            <div class="step-title">Evidence Tagging</div>
+            <div class="step-subtitle">
+              Capture and store crime scene photographs to document evidence and important details for
+              investigation and reporting.
+            </div>
+          </div>
+        </div>
+
+        <div class="step-footer">
+          <button mat-raised-button color="primary" (click)="openDialogEvidenceTagging()">Get Started</button>
+        </div>
+
+      </div>
+    </mat-card>
+  </div>
+
+</div>

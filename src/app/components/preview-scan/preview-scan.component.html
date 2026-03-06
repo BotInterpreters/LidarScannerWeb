@@ -1,0 +1,31 @@
+<div class="viewer-shell">
+  <div class="viewer-toolbar">
+    <div class="left-tools">
+      <button type="button" (click)="toggleWireframe()">
+        {{ wireframe ? 'Solid' : 'Wireframe' }}
+      </button>
+      <button type="button" (click)="toggleGrid()">
+        {{ showGrid ? 'Hide Grid' : 'Show Grid' }}
+      </button>
+      <button type="button" (click)="toggleAxes()">
+        {{ showAxes ? 'Hide Axes' : 'Show Axes' }}
+      </button>
+      <button type="button" (click)="resetView()">Reset View</button>
+      <button type="button" (click)="exportJpeg()">Export JPEG</button>
+    </div>
+
+    <div class="file-name">{{ fileName }}</div>
+  </div>
+
+  <div
+    class="upload-area"
+    (dragover)="onDragOver($event)"
+    (drop)="onDrop($event)"
+  >
+    <div class="upload-title">Drag & Drop your 3D scan file here</div>
+    <div class="upload-subtitle">Supported: OBJ or colored PLY</div>
+    <input type="file" accept=".obj,.ply" (change)="onFileSelected($event)" />
+  </div>
+
+  <div #viewerContainer class="viewer-container"></div>
+</div>
